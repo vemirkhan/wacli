@@ -53,3 +53,6 @@
 - Diagnostics: `wacli doctor` for store path, lock status/info, auth/connection check, and FTS status.
 - CLI UX: human-readable output by default with `--json`, global `--store`/`--timeout`, plus `wacli version`.
 - Storage: default `~/.wacli`, lock file for single-instance safety, SQLite DB with FTS5, WhatsApp session store, and media directory.
+
+<!-- Personal note: I'm using this primarily on Linux with a custom store path via WACLI_STORE.
+     The `wacli messages search` + `--json` combo piped into jq is especially handy for scripting. -->
