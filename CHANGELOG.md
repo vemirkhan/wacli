@@ -59,8 +59,7 @@
      Also find `wacli messages search --chat <name>` really useful for quickly finding conversations
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
-     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext extraction.
-     Another handy one: `wacli messages search <term> --json | jq '.[0] | {chat: .chat, text: .text, time: .timestamp}'`
-     to get just the most recent match with key fields. Useful when you only need a quick sanity check.
-     Note to self: remember to run `wacli sync` after a long offline period before searching,
-     otherwise recent messages won't show up in results. -->
+     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
+     extraction. Combine with `--since` and `--until` flags for date-bounded queries.
+     Another handy one: `wacli contacts search <name> --json | jq '.[0].jid'` to grab a JID
+     quickly when scripting sends. -->
