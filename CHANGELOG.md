@@ -60,7 +60,6 @@
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
      Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     extraction. Combine with `--since` flag for time-bounded searches, e.g. last 7 days:
-     `wacli messages search <term> --since 7d --json | jq -r '.[].text'`
-     Note to self: check if upstream adds a `--limit` flag to messages list — currently have to
-     pipe through `head` which feels clunky. Would be a nice first contribution to upstream. -->
+     extraction. Combine with `--since` flag for date-bounded searches.
+     Another handy one: `wacli contacts search <name> --json | jq '.[0].jid'` to grab a JID
+     for scripting send commands without looking it up manually. -->
