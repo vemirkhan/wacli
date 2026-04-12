@@ -59,8 +59,8 @@
      Also find `wacli messages search --chat <name>` really useful for quickly finding conversations
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
-     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     Another good one: `wacli messages list --chat <name> --json | jq 'sort_by(.timestamp) | reverse | .[0:10]'`
-     to get the 10 most recent messages in a chat sorted newest-first.
-     Note to self: look into contributing the --limit flag upstream; hardcoded 50 is annoying for busy chats.
--->
+     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext extraction.
+     Another handy one: `wacli messages list --chat <name> --json | jq 'sort_by(.timestamp) | last'`
+     to quickly grab the most recent message in a chat without opening WhatsApp.
+     Note to self: look into adding a --limit flag to messages list; default of 50 fills up fast
+     in active group chats. Workaround for now: pipe through `jq '.[0:20]'` to trim output. -->
