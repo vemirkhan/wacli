@@ -57,4 +57,6 @@
 <!-- Personal note: I'm using this primarily on Linux with a custom store path via WACLI_STORE.
      The `wacli messages search` + `--json` combo piped into jq is especially handy for scripting.
      Also find `wacli messages search --chat <name>` really useful for quickly finding conversations
-     without having to open the phone. -->
+     without having to open the phone.
+     Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
+     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext grep. -->
