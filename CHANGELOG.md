@@ -62,4 +62,5 @@
      Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
      extraction.
      Another handy one: `wacli messages list --chat <name> --limit 50 --json | jq 'reverse | .[].text'`
-     to get the last 50 messages in chronological order for a given chat. -->
+     to get the last 50 messages in chronological order — useful for summarizing a conversation.
+     Note to self: look into whether --since flag could be added upstream for date-range filtering. -->
