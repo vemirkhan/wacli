@@ -60,7 +60,6 @@
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
      Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     Another handy one: `wacli messages list --chat <name> --limit 50 --json | jq 'reverse | .[].text'`
-     to get the last 50 messages in chronological order for a given chat.
-     Note to self: try wiring up `wacli sync --follow` as a systemd user service so the store
-     stays fresh in the background without needing a terminal open. -->
+     extraction. Combine with grep for rough date filtering on the 'timestamp' field.
+     For bulk exports: `wacli messages list --chat <name> --json | jq -r '.[] | [.timestamp, .sender, .text] | @csv'`
+     which gives a nice CSV you can drop into a spreadsheet. -->
