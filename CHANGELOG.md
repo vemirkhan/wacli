@@ -59,8 +59,9 @@
      Also find `wacli messages search --chat <name>` really useful for quickly finding conversations
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
-     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     extraction.
-     Another handy one: `wacli messages list --chat <name> --limit 50 --json | jq 'reverse | .[].text'`
-     to get the last 50 messages in chronological order — useful for summarizing a conversation.
-     Note to self: look into whether --since flag could be added upstream for date-range filtering. -->
+     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext extraction.
+     Another good one: `wacli messages list --chat <name> --limit 50 --json | jq 'reverse | .[].text'`
+     to get the last 50 messages in chronological order — handy for catching up on a busy group chat.
+     Note to self: look into whether --timeout default of 30s can be bumped; sync sometimes cuts off early
+     on slow connections. Might patch the default to 60s locally if upstream doesn't change it.
+-->
