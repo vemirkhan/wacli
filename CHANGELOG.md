@@ -59,8 +59,7 @@
      Also find `wacli messages search --chat <name>` really useful for quickly finding conversations
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
-     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     extraction. Combine with `--since` flag for date-bounded searches, e.g.:
-       wacli messages search <term> --since 2025-01-01 --json | jq -r '.[].text'
-     For bulk exports I sometimes pipe into `tee dump.json` so I keep a local copy too.
--->
+     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext extraction.
+     Another handy pattern: `wacli messages list --chat <name> --limit 50 --json | jq 'reverse | .[].text'`
+     to get the last 50 messages in chronological order — useful for catching up on a busy group chat.
+     Note to self: look into whether --limit default could be bumped from 20 to 50 for daily use. -->
