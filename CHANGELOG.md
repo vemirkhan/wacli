@@ -60,7 +60,6 @@
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
      Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     Another handy one: `wacli messages list --chat <name> --json | jq 'last | .timestamp'` to check
-     when the most recent message in a chat was received without opening WhatsApp.
-     Note to self: look into whether --timeout can be set via env var to avoid long hangs on flaky
-     connections; default 30s feels too long when running in scripts. -->
+     Another handy one: `wacli messages list --chat <name> --limit 50 --json | jq 'reverse | .[].text'`
+     to get the last 50 messages in chronological order — useful for context before replying.
+     Note to self: look into whether --timeout can be set via env var too, would be nice for scripts. -->
