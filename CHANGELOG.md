@@ -60,7 +60,6 @@
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
      Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     extraction. Combine with grep for rough date filtering on the 'time' field.
-     For bulk media downloads I use: `wacli media download --chat <name> --limit 200`
-     Note to self: check if --limit flag is actually respected for media download in 0.5.0,
-     seemed to ignore it once with a large chat. -->
+     extraction. Combine with `--limit 50` to avoid overwhelming output on busy chats.
+     Another handy one: `wacli contacts search <name> --json | jq '.[0].jid'` to grab a JID
+     for use in subsequent send/messages commands without copy-pasting from the phone. -->
