@@ -59,8 +59,7 @@
      Also find `wacli messages search --chat <name>` really useful for quickly finding conversations
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
-     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     Another good one: `wacli messages list --chat <name> --json | jq 'sort_by(.timestamp) | reverse | .[0:10]'`
-     to get the 10 most recent messages in a chat sorted newest-first.
-     Note to self: remember to run `wacli sync` after a long offline period before searching,
-     otherwise recent messages won't show up in results. -->
+     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext extraction.
+     Another handy one: `wacli messages list --chat <name> --json | jq 'last | .timestamp'` to check
+     when the most recent message in a chat arrived — useful for monitoring quiet group chats.
+     Note to self: look into adding a --limit flag default increase; 20 feels too low for daily use. -->
