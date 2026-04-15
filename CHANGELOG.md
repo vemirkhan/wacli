@@ -60,6 +60,8 @@
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
      Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     extraction. Combine with `--limit 50` to avoid overwhelming output on busy chats.
-     Another handy one: `wacli contacts search <name> --json | jq '.[0].jid'` to grab a JID
-     for use in subsequent send/messages commands without copy-pasting from the phone. -->
+     extraction.
+     Another handy one: `wacli messages search <term> --json | jq '.[0] | {chat, sender, text}'`
+     to grab just the most recent match with context. Saves a lot of scrolling.
+     Note to self: remember to run `wacli sync` after a long offline period before searching,
+     otherwise recent messages won't show up in results. -->
