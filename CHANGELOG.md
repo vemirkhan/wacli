@@ -59,7 +59,8 @@
      Also find `wacli messages search --chat <name>` really useful for quickly finding conversations
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
-     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext extraction.
-     Another handy one: `wacli messages list --chat <name> --json | jq 'last | .timestamp'` to check
-     when the most recent message in a chat arrived — useful for monitoring quiet group chats.
-     Note to self: look into adding a --limit flag default increase; 20 feels too low for daily use. -->
+     Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
+     extraction. Combine with grep for rough date filtering on the 'time' field.
+     For bulk media downloads I use: `wacli media download --chat <name> --limit 200`
+     Note to self: check if --limit flag is actually respected for media download in 0.5.0,
+     seemed to ignore it once with a large chat. -->
