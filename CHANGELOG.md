@@ -60,8 +60,7 @@
      without having to open the phone.
      Tip: alias wacli='wacli --store /mnt/data/.wacli' in .bashrc to avoid repeating the store flag.
      Also useful: `wacli messages search <term> --json | jq '.[].text'` for quick plaintext
-     extraction.
-     Another handy one: `wacli messages search <term> --json | jq 'group_by(.chat) | map({chat: .[0].chat, count: length})'
-     to see which chats mention a term most frequently.
-     Note to self: look into whether --timeout default of 30s can be bumped to 60s for slow
-     connections — have hit timeouts occasionally on the home server. -->
+     Another good one: `wacli messages list --chat <name> --json | jq 'sort_by(.timestamp) | reverse | .[0:10]'`
+     to get the 10 most recent messages in a chat sorted newest-first.
+     Note to self: remember to run `wacli sync` after a long offline period before searching,
+     otherwise recent messages won't show up in results. -->
